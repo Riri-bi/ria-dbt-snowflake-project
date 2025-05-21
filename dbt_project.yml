@@ -4,7 +4,7 @@ config-version: 2
 
 profile: 'default'
 
-model-paths: ["staging_hometime", "marts_hometime"]
+model-paths: ["staging_hometime", "marts_hometime","sources_hometime"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
