@@ -1,13 +1,24 @@
-name: 'ria_dbt_project'
-version: '1.0.0'
+name: 'hometime_booking_analytics'
+version: '1.0'
 config-version: 2
 
 profile: 'default'
 
-model-paths: ["models"]
+model-paths: ["staging_hometime", "marts_hometime","sources_hometime"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
 target-path: "target"
-clean-targets: ["target", "dbt_modules"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
 
 models:
-  ria_dbt_project:
-    +materialized: view
+  hometime_booking_analytics:
+    staging_hometime:
+      +materialized: view
+    marts_hometime:
+      +materialized: view
